@@ -33,9 +33,13 @@ def clock_hand_angles(hour, minute):
             return min_hand_p - hr_hand_p
 
 def calc_clock_angle():
-    result = clock_hand_angles(*hr_min_input())
-    print(result)
+    result = None
+    active = 'Y'
+
+    while active == 'Y':
+        result = clock_hand_angles(*hr_min_input())
+        print(result)
+        active = input('Run again? (Y/N): ').upper()
+    return result
 
 calc_clock_angle()
-
-
